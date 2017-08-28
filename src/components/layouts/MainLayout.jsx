@@ -83,7 +83,7 @@ const Footer = () => (
           key={employee.id}
           to={employeesPath(employee.permalink)}
           linkClassNames='link'>
-          { employeName(employee) }
+          { employee.firstName }
         </Link>
       ))}
     </div>

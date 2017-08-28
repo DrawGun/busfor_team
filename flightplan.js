@@ -20,16 +20,20 @@ plan.local(function(local) {
 });
 
 plan.remote(function(remote) {
-  remote.exec('nvm use default');
+  remote.hostname();
+  remote.exec('source ~/.nvm/nvm.sh');
+  remote.exec('whoami');
+
+  remote.exec('source ~/.nvm/nvm.sh && nvm use default');
   remote.log('Move folder to web root');
   remote.exec('cp -R /tmp/' + tmpDir + ' ~');
   remote.rm('-rf /tmp/' + tmpDir);
 
   remote.log('Install dependencies');
-  remote.exec('npm --prefix ~/' + tmpDir + ' install ~/' + tmpDir);
+  remote.exec('source ~/.nvm/nvm.sh && npm --prefix ~/' + tmpDir + ' install ~/' + tmpDir);
 
   remote.log('Build');
-  remote.exec('npm --prefix ~/' + tmpDir + ' run build');
+  remote.exec('source ~/.nvm/nvm.sh && npm --prefix ~/' + tmpDir + ' run build');
 
   remote.log('Reload application');
   remote.exec('ln -snf ~/' + tmpDir + ' ~/current');
