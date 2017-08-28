@@ -1,0 +1,100 @@
+.employee {
+  padding: 0 50px;
+  margin-bottom: 10px;
+
+  .name-with-position {
+    margin-bottom: 15px;
+
+    h1 {
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 10px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  .description {
+    .image {
+      margin-bottom: 10px;
+    }
+    .info {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .navs {
+    margin-bottom: 10px;
+
+    .prev {
+      margin-right: 20px;
+      height: 20px;
+      line-height: 20px;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 20px;
+      background-color: rgb(251, 176, 63);
+      position:relative;
+      display:inline-block;
+
+      &:after{
+        position: absolute;
+        top: -9px;
+        right: 40px;
+        content: " ";
+        width: 0px;
+        height: 0px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #fbb03f;
+      }
+
+      &:hover{
+        background-color: #f9253f;
+      }
+      &:hover:after{
+        width: 0px;
+        height: 0px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #f9253f;
+      }
+    }
+
+    .next {
+      margin-right: 20px;
+      height: 20px;
+      line-height: 20px;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0 20px;
+      background-color: rgb(251, 176, 63);
+      position:relative;
+      display:inline-block;
+
+      &:after{
+        position: absolute;
+        top: -9px;
+        right: -20px;
+        content: " ";
+        width: 0px;
+        height: 0px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #fbb03f;
+      }
+
+      &:hover{
+        background-color: #f9253f;
+      }
+      &:hover:after{
+        width: 0px;
+        height: 0px;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid #f9253f;
+      }
+    }
+  }
+}

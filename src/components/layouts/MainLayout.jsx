@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { PageHeader, Well } from 'react-bootstrap';
+import {
+  Well, Navbar, Nav, NavDropdown, MenuItem, Image
+} from 'react-bootstrap';
+
+import { LinkContainer } from 'react-router-bootstrap';
 
 import Container from './Container';
+import { employeName } from 'helpers/employeName';
+import { employeesPath } from 'helpers/routes/employees';
+import Link from 'components/elements/Link';
+
+import team from 'constants/team';
 
 const MainLayout = ({ children }) => (
   <Container>
-    <Logo />
-
+    <Header />
     { children }
-
     <Footer />
   </Container>
 );
@@ -21,14 +28,64 @@ MainLayout.propTypes = {
 
 export default MainLayout;
 
-const Logo = () => (
-  <PageHeader>
-    Busfor Team
-  </PageHeader>
+const Header = () => (
+  <Navbar className='busfor' inverse collapseOnSelect>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <Link to='/'>
+          <Image
+            className='logo-image'
+            src='/images/logo_image.svg'
+            responsive />
+        </Link>
+        <Link to='/'>
+          <Image
+            className='logo-text'
+            src='/images/logo_text.svg'
+            responsive />
+        </Link>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav pullRight>
+        <NavDropdown eventKey={1} title='ABC' id='team-dropdown'>
+          {team.map((employee, i) => (
+            <LinkContainer
+              to={employeesPath(employee.permalink)}
+              key={employee.id}>
+
+              <MenuItem eventKey={`1.${i}`} >
+                { employeName(employee) }
+              </MenuItem>
+
+            </LinkContainer>
+          ))}
+        </NavDropdown>
+      </Nav>
+
+      <Navbar.Text pullRight className='we-have-grown'>
+        Нам - 5 лет! И нас уже { team.length }!
+      </Navbar.Text>
+    </Navbar.Collapse>
+  </Navbar>
 );
 
 const Footer = () => (
-  <Well className="footer">
-    Powered by React Course.
+  <Well className='footer busfor'>
+    <div className='title'>
+      Лучшая команда - это команда <span>BUSFOR</span>
+    </div>
+
+    <div className='links'>
+      {team.map((employee, _i) => (
+        <Link
+          key={employee.id}
+          to={employeesPath(employee.permalink)}
+          linkClassNames='link'>
+          { employeName(employee) }
+        </Link>
+      ))}
+    </div>
   </Well>
 );

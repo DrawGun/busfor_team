@@ -2,10 +2,10 @@
 
 var plan = require('flightplan');
 var tmpDir = 'blog-client-' + new Date().getTime();
-var user = 'react';
+var user = 'drawgun';
 
 plan.target('production', {
-  host: '46.101.145.134',
+  host: '85.143.215.239',
   username: user,
   agent: process.env.SSH_AUTH_SOCK
 });
