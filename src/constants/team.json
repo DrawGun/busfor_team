@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "permalink": "darth_vader",
+    "firstName": "Darth",
+    "lastName": "Vader",
+    "image": "/images/dv.jpg",
+    "position": "Обладатель самого пафосного дыхания, отец",
+    "info": [
+      "Не всегда был таким плохим, хотя ХЗ",
+      "Не имеет несколько конечностей",
+      "Спас своего сына"
+    ]
+  },
+  {
+    "id": 2,
+    "permalink": "luke_skywalker",
+    "firstName": "Luke",
+    "lastName": "Skywalker",
+    "image": "/images/ls.jpg",
+    "position": "Джедай, сын",
+    "info": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi libero, luctus nec erat ut, tristique venenatis tellus. Sed ac massa erat. In nec risus eu purus ullamcorper tempus.",
+      "Maecenas eget ante sagittis, ullamcorper ex sed, consequat erat.",
+      "Morbi ut dignissim risus."
+    ]
+  },
+  {
+    "id": 3,
+    "permalink": "leia_organa",
+    "firstName": "Leia",
+    "lastName": "Organa",
+    "image": "/images/pl.jpg",
+    "position": "Принцесса Алдераана, дочь, сестра",
+    "info": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi libero, luctus nec erat ut, tristique venenatis tellus. Sed ac massa erat. In nec risus eu purus ullamcorper tempus.",
+      "Maecenas eget ante sagittis, ullamcorper ex sed, consequat erat.",
+      "Morbi ut dignissim risus."
+    ]
+  },
+  {
+    "id": 4,
+    "permalink": "han_solo",
+    "firstName": "Han",
+    "lastName": "Solo",
+    "image": "/images/hs.jpg",
+    "position": "Капитан «Сокола Тысячелетия»",
+    "info": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi libero, luctus nec erat ut, tristique venenatis tellus. Sed ac massa erat. In nec risus eu purus ullamcorper tempus.",
+      "Maecenas eget ante sagittis, ullamcorper ex sed, consequat erat.",
+      "Morbi ut dignissim risus."
+    ]
+  },
+  {
+    "id": 5,
+    "permalink": "chewey",
+    "firstName": "Chewbacca",
+    "lastName": "Chewey",
+    "image": "/images/chewey.jpg",
+    "position": "Первый помощник на космическом корабле Сокол Тысячелетия",
+    "info": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi libero, luctus nec erat ut, tristique venenatis tellus. Sed ac massa erat. In nec risus eu purus ullamcorper tempus.",
+      "Maecenas eget ante sagittis, ullamcorper ex sed, consequat erat.",
+      "Morbi ut dignissim risus."
+    ]
+  }
+]

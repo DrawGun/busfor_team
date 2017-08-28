@@ -1,7 +1,7 @@
 import MainRoute from 'routes/Main';
-import EmployeeRoute from 'routes/Employee';
+import TeamRoute from 'routes/Team';
 
 export default () => ([
   MainRoute,
-  EmployeeRoute
+  TeamRoute
 ]);

@@ -1,28 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { Helmet } from 'react-helmet';
+import team from 'constants/team';
+
+import Employee from 'components/ui/Employee';
+import { employeesPath } from 'helpers/routes/employees';
 
 class EmployeeContainer extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {
+    const index = 0;
+    const employee = team[index];
+    const prevIndex = team.length - 1;
+    const nextIndex = index + 1;
+    
     return (
-      <div>GYT MAIN</div>
+      <Employee
+        employee={employee}
+        prev={employeesPath(team[prevIndex].permalink)}
+        next={employeesPath(team[nextIndex].permalink)} />
     );
   }
 }
-
-// EmployeeContainer.propTypes = {
-//   item: PropTypes.object,
-//   isFetching: PropTypes.bool
-// };
-
-// EmployeeContainer.defaultProps = {
-//   item: {}
-// };
 
 export default EmployeeContainer;

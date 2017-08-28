@@ -57,7 +57,7 @@ module.exports = {
     "no-underscore-dangle": 0,
     "no-whitespace-before-property": 1,
     "no-var": 1,
-    "no-unused-vars": ["error", { "vars": "all", "argsIgnorePattern": "^_ignored" }],
+    "no-unused-vars": ["error", { "vars": "all", "argsIgnorePattern": "^_" }],
     "object-shorthand": 1,
     "padded-blocks": ["warn", "never"],
     "prefer-const": 1,
