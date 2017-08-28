@@ -6,6 +6,7 @@ import { find } from 'lodash/collection';
 import { findIndex } from 'lodash/array';
 
 import Employee from 'components/ui/Employee';
+import IncognitoMen from 'components/ui/IncognitoMen';
 import { employeesPath } from 'helpers/routes/employees';
 
 import team from 'constants/team';
@@ -34,7 +35,7 @@ class TeamContainer extends React.Component {
       prevIndex = team.length - 1;
       nextIndex = index + 1;
     } else if (index == team.length - 1) {
-      prevIndex = team.length - 1;
+      prevIndex = team.length - 2;
       nextIndex = 0;
     } else {
       prevIndex = index - 1;
@@ -51,7 +52,7 @@ class TeamContainer extends React.Component {
 
   renderIncognito() {
     return (
-      <div>TEST</div>
+      <IncognitoMen />
     );
   }
 }

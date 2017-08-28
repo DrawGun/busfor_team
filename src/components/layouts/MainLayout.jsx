@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Well, Navbar, Nav, NavDropdown, MenuItem, Image
+  Well, Navbar, Nav, NavDropdown, MenuItem, Image, Row, Col
 } from 'react-bootstrap';
 
 import { LinkContainer } from 'react-router-bootstrap';
@@ -53,7 +53,7 @@ const Header = () => (
           {team.map((employee, i) => (
             <LinkContainer
               to={employeesPath(employee.permalink)}
-              key={employee.id}>
+              key={`${employee.id}-${i}`}>
 
               <MenuItem eventKey={`1.${i}`} >
                 { employeName(employee) }
@@ -73,19 +73,25 @@ const Header = () => (
 
 const Footer = () => (
   <Well className='footer busfor'>
-    <div className='title'>
-      Лучшая команда - это команда <span>BUSFOR</span>
-    </div>
+    <Row className='show-grid title'>
+      <Col xs={12} md={12} sm={12}>
+        Лучшая команда - это команда <span>BUSFOR</span>
+      </Col>
+    </Row>
 
-    <div className='links'>
-      {team.map((employee, _i) => (
-        <Link
-          key={employee.id}
-          to={employeesPath(employee.permalink)}
-          linkClassNames='link'>
-          { employee.firstName }
-        </Link>
-      ))}
-    </div>
+    <Row className='show-grid links'>
+      <Col xs={12} md={12} sm={12}>
+
+        {team.map((employee, i) => (
+          <Link
+            key={`${employee.id}-${i}`}
+            to={employeesPath(employee.permalink)}
+            linkClassNames='link'>
+            { `${employee.firstName}` }
+          </Link>
+        ))}
+
+      </Col>
+    </Row>
   </Well>
 );
