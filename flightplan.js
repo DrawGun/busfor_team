@@ -3,9 +3,10 @@
 var plan = require('flightplan');
 var tmpDir = 'blog-client-' + new Date().getTime();
 var user = 'drawgun';
+var host = '85.143.215.239';
 
 plan.target('production', {
-  host: '85.143.215.239',
+  host: host,
   username: user,
   agent: process.env.SSH_AUTH_SOCK
 });
@@ -37,7 +38,7 @@ plan.remote(function(remote) {
 
   remote.log('Reload application');
   remote.exec('ln -snf ~/' + tmpDir + ' ~/current');
-  remote.exec('(cd ~/current && pm2 restart pm2.config.js --env production)');
+  remote.exec('source ~/.nvm/nvm.sh && (cd ~/current && pm2 restart pm2.config.js --env production)');
 
   remote.log('Finish');
 });
