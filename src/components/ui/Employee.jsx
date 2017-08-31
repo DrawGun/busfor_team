@@ -15,6 +15,7 @@ class Employee extends React.Component {
 
   render() {
     const { employee, prev, next  } = this.props;
+    const image = employee.image || '/images/incognito.png';
 
     return (
       <Row className='show-grid employee'>
@@ -26,7 +27,7 @@ class Employee extends React.Component {
           <Row>
             <Col xs={12} md={5} sm={6} className='image'>
               <Image
-                src={ employee.image }
+                src={ image }
                 alt={ employee.permalink }
                 title={ employeName(employee) }
                 rounded
